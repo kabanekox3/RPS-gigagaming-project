@@ -1,7 +1,4 @@
-//generate random number between 1 and 3
-//if statments by cases
-
-
+//returns string
 function getComputerChoice() {
     let rand = Math.random();
     console.log(rand)
@@ -13,4 +10,8 @@ function getComputerChoice() {
        return "Scissors"
     }
 }
+
 //returns string
+function getHumanChoice() {
+    return prompt("Rock, Paper or Scissors?")
+}
