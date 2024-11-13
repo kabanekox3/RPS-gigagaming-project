@@ -51,3 +51,15 @@ function playGame() {
 }
 
 playGame();
+
+function getScore() {
+    if (humanScore > computerScore) {
+        console.log("You win! :D")
+    } else if (humanScore < computerScore) {
+        console.log("You lose! D:")
+    } else if (humanScore == computerScore) {
+        console.log("It's a tie! :S")
+    }
+}
+
+getScore();
