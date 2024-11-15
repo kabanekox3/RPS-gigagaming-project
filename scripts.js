@@ -20,26 +20,27 @@ let computerScore = 0
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice == computerChoice) {
-        console.log("Tie!")
+        scoreContainer.textContent = "Tie!";
     } else if (humanChoice == "Rock" && computerChoice == "Paper") {
-        console.log("You lose! Rock beats paper");
+        scoreContainer.textContent = "You lose! Paper beats rock";
         computerChoice++
     } else if (humanChoice == "Paper" && computerChoice == "Rock") {
-        console.log("You win! Rock beats paper")
+        scoreContainer.textContent = "You win! Rock beats paper";
         humanScore++
     } else if (humanChoice == "Rock" && computerChoice == "Scissors") {
-        console.log("You win! Rock beats scissors")
+        scoreContainer.textContent = "You win! Rock beats scissors";
         humanScore++
     } else if (humanChoice == "Scissors" && computerChoice == "Rock") {
-        console.log("You lose! Rock beats scissors")
+        scoreContainer.textContent = "You lose! Rock beats scissors";
         computerScore++
     } else if (humanChoice == "Scissors" && computerChoice == "Paper") {
-        console.log("You win! Scissors beats paper")
+        scoreContainer.textContent = "You win! Scissors beats paper";
         humanScore++
     } else if (humanChoice == "Paper" && computerChoice == "Scissors") {
-        console.log("You lose! Scissors beats paper")
+        scoreContainer.textContent = "You lose! Scissors beats paper";
         computerScore++
     }
+    getScore();
 }
 
 let container = document.createElement("div");
@@ -74,20 +75,18 @@ buttonThree.addEventListener("click", () => {
     playRound(playerChoice, computerChoice);
 })
 
+let scoreContainer = document.createElement("div");
+scoreContainer.textContent = "poggers"
+
+let totalScoreContainer = document.createElement("div");
+
 main.appendChild(container);
 container.appendChild(buttonOne);
 container.appendChild(buttonTwo);
 container.appendChild(buttonThree);
-//playGame();
+main.appendChild(scoreContainer);
+main.appendChild(totalScoreContainer);
 
 function getScore() {
-    if (humanScore > computerScore) {
-        console.log("You win! :D")
-    } else if (humanScore < computerScore) {
-        console.log("You lose! D:")
-    } else if (humanScore == computerScore) {
-        console.log("It's a tie! :S")
-    }
+    totalScoreContainer.textContent = `Computer: ${computerScore}. Human: ${humanScore}`;
 }
-
-getScore();
