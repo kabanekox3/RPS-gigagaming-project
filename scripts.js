@@ -48,7 +48,6 @@ container.classList.add("container");
 let buttonOne = document.createElement("button");
 buttonOne.textContent = "Rock";
 
-
 let buttonTwo = document.createElement("button");
 buttonTwo.textContent = "Paper"
 
@@ -58,19 +57,19 @@ buttonThree.textContent = "Scissors"
 let main = document.querySelector(".main");
 
 buttonOne.addEventListener("click", () => {
-    let playerChoice = Rock;
+    let playerChoice = "Rock";
     let computerChoice = getComputerChoice();
     playRound(playerChoice, computerChoice);
 })
 
 buttonTwo.addEventListener("click", () => {
-    let playerChoice = Paper;
+    let playerChoice = "Paper";
     let computerChoice = getComputerChoice();
     playRound(playerChoice, computerChoice);
 })
 
 buttonThree.addEventListener("click", () => {
-    let playerChoice = Scissors;
+    let playerChoice = "Scissors";
     let computerChoice = getComputerChoice();
     playRound(playerChoice, computerChoice);
 })
