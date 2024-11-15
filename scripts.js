@@ -80,13 +80,21 @@ scoreContainer.textContent = "poggers"
 
 let totalScoreContainer = document.createElement("div");
 
+let finalScore = document.createElement("h1");
+
 main.appendChild(container);
 container.appendChild(buttonOne);
 container.appendChild(buttonTwo);
 container.appendChild(buttonThree);
 main.appendChild(scoreContainer);
 main.appendChild(totalScoreContainer);
+main.appendChild(finalScore);
 
 function getScore() {
     totalScoreContainer.textContent = `Computer: ${computerScore}. Human: ${humanScore}`;
-}
+    if (humanScore >= 5) {
+        finalScore.textContent = "Human wins!"
+    } else if (computerScore >= 5) {
+        finalScore.textContent = "Computer wins!"
+    }
+ }
