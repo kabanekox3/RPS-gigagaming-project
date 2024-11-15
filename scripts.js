@@ -42,15 +42,44 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    for (let i = 0; i <= 5; i++) {
-        let human = getHumanChoice();
-        let computer = getComputerChoice();
-        playRound(human, computer);
-    }
-}
+let container = document.createElement("div");
+container.classList.add("container");
 
-playGame();
+let buttonOne = document.createElement("button");
+buttonOne.textContent = "Rock";
+
+
+let buttonTwo = document.createElement("button");
+buttonTwo.textContent = "Paper"
+
+let buttonThree = document.createElement("button");
+buttonThree.textContent = "Scissors"
+
+let main = document.querySelector(".main");
+
+buttonOne.addEventListener("click", () => {
+    let playerChoice = Rock;
+    let computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
+})
+
+buttonTwo.addEventListener("click", () => {
+    let playerChoice = Paper;
+    let computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
+})
+
+buttonThree.addEventListener("click", () => {
+    let playerChoice = Scissors;
+    let computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
+})
+
+main.appendChild(container);
+container.appendChild(buttonOne);
+container.appendChild(buttonTwo);
+container.appendChild(buttonThree);
+//playGame();
 
 function getScore() {
     if (humanScore > computerScore) {
